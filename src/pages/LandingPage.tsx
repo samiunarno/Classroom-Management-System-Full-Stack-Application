@@ -12,10 +12,6 @@ import {
   Sparkles,
   ArrowRight,
   PlayCircle,
-  Check,
-  Star,
-  TrendingUp,
-  Zap,
 } from "lucide-react";
 
 const LandingPage: React.FC = () => {
@@ -71,30 +67,6 @@ const LandingPage: React.FC = () => {
       icon: BarChart3,
       title: "Analytics & Insights",
       text: "Visual dashboards revealing trends, performance, and engagement.",
-    },
-  ];
-
-  /* NEW SECTION – WHY CHOOSE US */
-  const whyChoose = [
-    {
-      icon: Star,
-      title: "Beautiful UX",
-      desc: "Designed with a modern interface that students and teachers love.",
-    },
-    {
-      icon: Zap,
-      title: "Lightning Fast",
-      desc: "Optimized performance keeps everything responsive and smooth.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Data-Driven",
-      desc: "Powerful analytics help institutions drive measurable results.",
-    },
-    {
-      icon: Check,
-      title: "Easy Adoption",
-      desc: "No steep learning curve—start using AssignPro in minutes.",
     },
   ];
 
@@ -163,17 +135,32 @@ const LandingPage: React.FC = () => {
         </div>
       </motion.section>
 
-      {/* NEW: TRUSTED BY SECTION */}
-      <section className="py-20 bg-white text-center">
-        <h3 className="text-xl font-semibold text-gray-700 mb-8">
-          Trusted by institutions worldwide
+      {/* STATS SECTION */}
+      <section className="py-20 bg-gray-50 text-center">
+        <h3 className="text-xl font-semibold text-gray-700 mb-10">
+          A Reputation Built on Excellence
         </h3>
 
-        <div className="flex justify-center gap-12 opacity-80 grayscale hover:grayscale-0 transition-all">
-          <img src="/logos/uni1.png" className="h-10" alt="logo" />
-          <img src="/logos/uni2.png" className="h-10" alt="logo" />
-          <img src="/logos/uni3.png" className="h-10" alt="logo" />
-          <img src="/logos/uni4.png" className="h-10" alt="logo" />
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div>
+            <p className="text-4xl font-bold text-gray-800">25+</p>
+            <p className="text-gray-600">Years of Academic Excellence</p>
+          </div>
+
+          <div>
+            <p className="text-4xl font-bold text-gray-800">15k+</p>
+            <p className="text-gray-600">Students Enrolled</p>
+          </div>
+
+          <div>
+            <p className="text-4xl font-bold text-gray-800">300+</p>
+            <p className="text-gray-600">Faculty Members</p>
+          </div>
+
+          <div>
+            <p className="text-4xl font-bold text-gray-800">50+</p>
+            <p className="text-gray-600">Programs Offered</p>
+          </div>
         </div>
       </section>
 
@@ -203,30 +190,90 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* NEW SECTION: WHY ASSIGNPRO */}
-      <section className="py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-12">Why Choose AssignPro?</h2>
+      {/* PROFESSIONAL SECTION #1: KEY OUTCOMES */}
+      <section className="py-32 bg-gradient-to-br from-white via-indigo-50/40 to-purple-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Designed for Modern Academic Excellence
+          </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-            {whyChoose.map((item, i) => (
+          <div className="divide-y divide-gray-300/40 bg-white shadow-xl rounded-3xl overflow-hidden">
+            {[
+              {
+                title: "Unified Learning Environment",
+                text: "Everything your classroom needs — materials, announcements, tasks, communication — in one unified platform.",
+              },
+              {
+                title: "Efficient Collaboration",
+                text: "Teachers and students collaborate effortlessly through real-time updates, shared documents, and organized discussions.",
+              },
+              {
+                title: "Institution-Ready Scalability",
+                text: "Built to serve thousands of users with strong security, stable performance, and enterprise reliability.",
+              },
+              {
+                title: "Streamlined Academic Workflows",
+                text: "Digital submissions, automated organization, and intelligent tracking simplify daily academic workloads.",
+              },
+            ].map((item, i) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="p-8 bg-indigo-50 rounded-3xl shadow hover:scale-105 transition-all"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.15 }}
+                className="p-10"
               >
-                <item.icon className="w-12 h-12 text-indigo-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
+                <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  {item.text}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* WORKFLOW */}
+      {/* PROFESSIONAL SECTION #2: PLATFORM SNAPSHOT */}
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-20">
+            A Clean, Modern Classroom Workflow
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div>
+              <h3 className="text-3xl font-semibold mb-4">Create</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Teachers create structured courses, upload materials, and
+                organize lessons effortlessly in a clean UI.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-3xl font-semibold mb-4">Engage</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Students interact, submit assignments, and collaborate through
+                simple, distraction-free tools.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-3xl font-semibold mb-4">Grow</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Institutions track trends, performance, and engagement with
+                actionable insights built-in.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WORKFLOW SECTION */}
       <section className="py-28 bg-gradient-to-br from-indigo-700 via-purple-700 to-blue-700 text-white text-center relative overflow-hidden">
 
         {/* ORBS */}
@@ -281,7 +328,6 @@ const LandingPage: React.FC = () => {
       {/* FOOTER */}
       <footer className="bg-gray-950 text-gray-300 py-20 mt-10 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-
           <div>
             <h3 className="text-2xl font-bold text-white mb-4">AssignPro</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -319,13 +365,13 @@ const LandingPage: React.FC = () => {
               <li className="hover:text-white transition cursor-pointer">Contact Us</li>
             </ul>
           </div>
-
         </div>
 
         <div className="mt-16 border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
           © 2025 AssignPro — All Rights Reserved.
         </div>
       </footer>
+
     </div>
   );
 };
