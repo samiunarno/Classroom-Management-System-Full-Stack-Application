@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 import LandingPage from './pages/LandingPage';
@@ -12,11 +12,11 @@ import MonitorDashboard from './pages/MonitorDashboard';
 import StudentDashboard from './pages/StudentDashboard';
 
 const AppContent: React.FC = () => {
-  const { user } = useAuth();
-
   return (
     <div className="min-h-screen">
-      {user && <Navbar />}
+      {/* Navbar will be present on all pages */}
+      <Navbar />
+      
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />

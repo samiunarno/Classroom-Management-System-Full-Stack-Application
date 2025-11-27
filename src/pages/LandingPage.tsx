@@ -80,7 +80,7 @@ const LandingPage: React.FC = () => {
             to="/"
             className="text-3xl font-extrabold flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent"
           >
-            <Sparkles className="w-6 h-6" /> AssignPro
+            <Sparkles className="w-6 h-6" /> 
           </Link>
 
           <div className="flex items-center gap-6">
