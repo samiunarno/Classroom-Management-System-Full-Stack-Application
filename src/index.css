@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* index.css or global css file */
+
+/* Assuming your navbar height is ~80px including padding */
+body {
+  padding-top: 80px; /* Adjust to match your navbar height */
+}
+
+/* Optional: ensure smooth scroll on anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: avoid horizontal overflow */
+body {
+  overflow-x: hidden;
+}
